@@ -547,8 +547,8 @@ const CITATION_INSTRUCTION =
     "1. Use inline markers like [1], [2] in the answer where relevant.\n" +
     "2. End with a Sources section formatted exactly like:\n\n" +
     "Sources:\n" +
-    "1. Source title - https://en.wikipedia.org/wiki/Example\n" +
-    "2. Another source - https://www.britannica.com/science/example\n\n" +
+    "1. Source title - https://example.com/page1\n" +
+    "2. Another source - https://example.com/page2\n\n" +
     "IMPORTANT: Use only direct public https URLs to real pages. Never use vertexaisearch.cloud.google.com links or made-up URLs. For simple greetings or casual chat, skip citations."
 
 async function callGemini(useSearch) {

@@ -19,7 +19,8 @@ const cors = require("cors");
 const app = express();
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.static("Chatbot"));// your frontend folder
 
 app.post("/login", async (req, res) => {
@@ -86,7 +87,7 @@ app.post("/register", async (req, res) => {
 app.post("/chat", async (req, res) => {
     try {
         const response = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
             {
                 method: "POST",
                 headers: {
@@ -147,4 +148,3 @@ app.post("/forgot-password", async (req, res) => {
 app.listen(3000, () => {
     console.log(`Server running on port 3000`);
 });
-
